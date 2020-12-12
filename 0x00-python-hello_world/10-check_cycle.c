@@ -7,7 +7,7 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *slow = list->next, *speed = list->next;
+	listint_t *slow = list, *speed = list;
 
 	if (list == NULL || list->next == NULL)
 		return (0);
