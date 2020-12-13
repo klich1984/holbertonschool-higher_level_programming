@@ -16,5 +16,3 @@ elif int(l_dig) < 6 and number > 0:
 
 else:
     print("Last digit of", number, "is", n_neg, "and is less than 6 and not 0")
-
-print(number)
