@@ -6,7 +6,7 @@ f_dig = str(number)[0]
 n_neg = f_dig + l_dig
 
 if int(l_dig) > 5 and number > 0:
-    print("Last digit of", number, "is",l_dig, "and is greater than 5")
+    print("Last digit of", number, "is", l_dig, "and is greater than 5")
 
 elif int(l_dig) == 0:
     print("Last digit of", number, "is", l_dig, "and is 0")
