@@ -6,7 +6,7 @@ class Square:
     """class that calculates the square with the size"""
     __size = 0
 
-    def __init__(self, size=None):
+    def __init__(self, size=0):
         """Initializacion of the class Square
 
         Args:
