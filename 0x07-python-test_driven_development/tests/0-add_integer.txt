@@ -1,0 +1,51 @@
+=============================
+The module ``0-add_integer``
+=============================
+
+Import module:
+
+	>>> add_integer = __import__("0-add_integer").add_integer
+
+module Docstring check:
+	>>> mod = __import__("0-add_integer").__doc__
+	>>> len(mod) > 1
+	True
+
+fuction Docstring check:
+	>>> func = __import__("0-add_integer").add_integer.__doc__
+	>>> len(func) > 1
+	True
+
+PEP8 check:
+	>>> import os
+	>>> os.popen("pep8 0-add_integer.py").read()
+	''
+
+Test main:
+	>>> add_integer(1, 2)
+	3
+
+	>>> add_integer(100, -2)
+	98
+
+	>>> add_integer(2)
+	100
+
+	>>> add_integer(100.3, -2)
+	98
+
+	>>> add_integer(4, "school")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+	>>> add_integer("school, 6")
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
