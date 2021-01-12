@@ -122,3 +122,37 @@ class Rectangle:
 
         print("Bye rectangle...")
         type(self).number_of_instances -= 1
+
+
+    def bigger_or_equal(rect_1, rect_2):
+        """Static method returns the biggest rectangle based on the area
+
+        Args:
+            rect_1 (Rectangle instance): must be an instance of Rectangle
+            rect_2 (Rectangle instance): must be an instance of Rectangle
+        """
+        if type(rect_1) is not Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if type(rect_2) is not Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        return "hola"
+
+
+
+Rectangle = __import__('8-rectangle').Rectangle
+
+my_rectangle_1 = Rectangle(8, 4)
+my_rectangle_2 = Rectangle(2, 3)
+
+if my_rectangle_1 is Rectangle.bigger_or_equal(my_rectangle_1, my_rectangle_2):
+    print("my_rectangle_1 is bigger or equal to my_rectangle_2")
+else:
+    print("my_rectangle_2 is bigger than my_rectangle_1")
+
+
+my_rectangle_2.width = 10
+my_rectangle_2.height = 5
+if my_rectangle_1 is Rectangle.bigger_or_equal(my_rectangle_1, my_rectangle_2):
+    print("my_rectangle_1 is bigger or equal to my_rectangle_2")
+else:
+    print("my_rectangle_2 is bigger than my_rectangle_1")
