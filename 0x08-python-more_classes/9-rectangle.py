@@ -138,3 +138,12 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
+
+
+    def square(cls, size=0):
+        """method that returns a new Rectangle instance
+
+        Args:
+            size (int): size of the rectangle. Defaults to 0.
+        """
+        return cls(size * size)
