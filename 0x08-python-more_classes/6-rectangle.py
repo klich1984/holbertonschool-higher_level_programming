@@ -15,6 +15,8 @@ class Rectangle:
         [type]: [description]
     """
 
+    number_of_instances = 0
+
     # defino constructor
     def __init__(self, width=0, height=0):
         """Constructor for instance Rectangle
@@ -26,6 +28,7 @@ class Rectangle:
 
         self.width = width
         self.height = height
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -117,3 +120,4 @@ class Rectangle:
         """destructor of the object and Print Bye rectangle"""
 
         print("Bye rectangle...")
+        type(self).number_of_instances -= 1
