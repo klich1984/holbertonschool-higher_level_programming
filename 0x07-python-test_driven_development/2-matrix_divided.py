@@ -20,14 +20,16 @@ def matrix_divided(matrix, div):
                 raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    #range(len(matrix)) es largo de filas = 2
-    #range(len(matrix[f])) es el largo de columnas = 3
+    if len(matrix) != 1:
+        if len(matrix[0]) != len(matrix[1]):
+            raise TypeError("Each row of the matrix must have the same size")
 
     new_matrix = []
     for f in range(len(matrix)):
         new_matrix.append([])
         for c in range(len(matrix[f])):
             if type(matrix[f][c]) != int and type(matrix[f][c]) != float:
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError(("matrix must be a matrix \
+(list of lists) of integers/floats"))
             new_matrix[f].append(round(matrix[f][c]/div, 2))
     return new_matrix
