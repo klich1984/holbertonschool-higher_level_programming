@@ -1,0 +1,56 @@
+=============================
+The module ``3-say_my_name``
+=============================
+
+Import module:
+
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+module Docstring check:
+
+	>>> mod = __import__("3-say_my_name").__doc__
+	>>> len(mod) > 1
+	True
+
+function Docstring check:
+
+	>>> func = __import__("3-say_my_name").say_my_name.__doc__
+	>>> len(func) > 1
+	True
+
+PEP8 check:
+
+	>>> import os
+	>>> os.popen("pep8 3-say_my_name.py").read()
+	''
+
+Test main:
+
+	>>> say_my_name("John", "Smith")
+	My name is John Smith
+
+	>>> say_my_name("Walter", "White")
+	My name is Walter White
+
+	>>> say_my_name("Bob")
+	My name is Bob 
+
+	>>> say_my_name(12, "White")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+Test QA Review
+
+	>>> say_my_name("Bob", "Lenon")
+	My name is Bob Lenon
+
+	>>> say_my_name("Bob", 12)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+	>>> say_my_name()
+	Traceback (most recent call last):
+	...
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
