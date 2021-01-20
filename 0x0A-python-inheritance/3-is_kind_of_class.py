@@ -13,7 +13,7 @@ def is_kind_of_class(obj, a_class):
         a_class (class): [description]
     Return: True in case exit o otherwise False
     """
-    if (issubclass(type(obj), a_class) == True):
+    if issubclass(type(obj), a_class) is True:
         return True
     else:
         return False
