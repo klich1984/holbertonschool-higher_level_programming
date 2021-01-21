@@ -14,5 +14,5 @@ except:
     save_to_json_file(sys.argv[1:], name_file)
 else:
     file_js = load_from_json_file(name_file)
-    file_js += sys.argv[1:]
+    file_js += (sys.argv[1:])
     save_to_json_file(file_js, name_file)
