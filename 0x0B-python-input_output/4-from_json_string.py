@@ -11,6 +11,5 @@ def from_json_string(my_str):
     Args:
         my_str (str): file that convert a json python
     """
-    #with open(my_str, 'r', encoding='utf-8') as f:
     js = json.loads(my_str)
     return js
