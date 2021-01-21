@@ -16,4 +16,15 @@ except:
     save_to_json_file(sys.argv[1:], name_file)
 else:
     print("entre al else")
+    arguments = len(sys.argv) - 1
+    position = 1
+    while (arguments >= position):
+        print(position, end=" ")
+        file_js = load_from_json_file(name_file)
+        file_js += sys.argv[1:]
+        print("file_js = ", file_js)
+        save_to_json_file(file_js, name_file)
+        position += position
+    
+    print("arguments = ", arguments)
 print(sys.argv[1:])
