@@ -9,7 +9,7 @@ def text_indentation(text):
         text (str): text for print
     """
     if type(text) is not str:
-        raise TypeError("Text must be a string")
+        raise TypeError("text must be a string")
 # busco en text el caracter y cuando lo encuentra lo cambia \n\n
     for i in ".?:":
         text = text.replace(i, i + "\n\n")
