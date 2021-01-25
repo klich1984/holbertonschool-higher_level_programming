@@ -33,6 +33,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, width):
         """setter width"""
+        self.check_height_with(width, "width")
         self.__width = width
 
     @property
@@ -43,6 +44,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, height):
         """setter height"""
+        self.check_height_with(height, "height")
         self.__height = height
 
     @property
@@ -53,6 +55,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, x):
         """setter x"""
+        self.check_x_y(x, "x")
         self.__x = x
 
     @property
@@ -63,4 +66,19 @@ class Rectangle(Base):
     @y.setter
     def y(self, y):
         """setter x"""
+        self.check_x_y(y, "y")
         self.__y = y
+
+    def check_height_with(self, value, name):
+        """method check_height_with"""
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(name))
+        elif value <= 0:
+            raise ValueError("{} must be > 0".format(name))
+
+    def check_x_y(self, value, name):
+        """method check_ValueError"""
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(name))
+        if value < 0:
+            raise ValueError("{} must be > 0".format(name))
