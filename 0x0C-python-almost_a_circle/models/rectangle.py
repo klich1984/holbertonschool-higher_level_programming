@@ -25,42 +25,43 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-        @property
-        def width(self):
-            """getter width"""
-            return self.__width
+    @property
+    def width(self):
+        """getter width"""
+        return self.__width
 
-        @width.setter
-        def width(self, width):
-            """setter width"""
-            self.__width = width
+    @width.setter
+    def width(self, width):
+        """setter width"""
+        self.__width = width
 
-        @property
-        def height(self):
-            """getter height"""
-            return self.__height
+    @property
+    def height(self):
+        """getter height"""
+        return self.__height
 
-        @height.setter
-        def height(self, height):
-            """setter height"""
-            self.__height = height
+    @height.setter
+    def height(self, height):
+        """setter height"""
+        self.__height = height
 
-        @property
-        def x(self):
-            """getter x"""
-            return self.__x
+    @property
+    def x(self):
+        """getter x"""
+        return self.__x
 
-        @x.setter
-        def __x(self, x):
-            """setter x"""
-            self.__x = x
+    @x.setter
+    def x(self, x):
+        """setter x"""
+        self.__x = x
 
-        @property
-        def y(self):
-            """getter y"""
-            return self.__y
+    @property
+    def y(self):
+        """getter y"""
+        return self.__y
 
-        @y.setter
-        def __y(self, y):
-            """setter x"""
-            self.__y = y
+    @y.setter
+    def y(self, y):
+        """setter x"""
+        self.__y = y
+
