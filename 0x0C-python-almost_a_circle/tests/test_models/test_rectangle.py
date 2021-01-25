@@ -46,7 +46,7 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(r2.y, 30)
 
     def test_task_3(self):
-        """ test task 3"""
+        """ test task 3 """
         with self.assertRaises(TypeError) as ar:
             Rectangle(10, "2")
         self.assertEqual(str(ar.exception), "height must be an integer")
@@ -64,3 +64,12 @@ class Test_Rectangle(unittest.TestCase):
         with self.assertRaises(ValueError) as ar:
             Rectangle(10, 2, 3, -1)
         self.assertEqual(str(ar.exception), "y must be > 0")
+
+    def test_task_4(self):
+        """ test task 4 """
+        r1 = Rectangle(3, 2)
+        self.assertEqual(r1.area(), 6)
+        r2 = Rectangle(2, 10)
+        self.assertEqual(r2.area(), 20)
+        r3 = Rectangle(8, 7, 0, 0, 12)
+        self.assertEqual(r3.area(), 56)
