@@ -44,3 +44,23 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(r2.height, 22)
         self.assertEqual(r2.x, 10)
         self.assertEqual(r2.y, 30)
+
+    def test_task_3(self):
+        """ test task 3"""
+        with self.assertRaises(TypeError) as ar:
+            Rectangle(10, "2")
+        self.assertEqual(str(ar.exception), "height must be an integer")
+
+        with self.assertRaises(ValueError) as ar:
+            r = Rectangle(10, 2)
+            r.width = -10
+        self.assertEqual(str(ar.exception), "width must be > 0")
+
+        with self.assertRaises(TypeError) as ar:
+            r = Rectangle(10, 2)
+            r.x = {}
+        self.assertEqual(str(ar.exception), "x must be an integer")
+
+        with self.assertRaises(ValueError) as ar:
+            Rectangle(10, 2, 3, -1)
+        self.assertEqual(str(ar.exception), "y must be > 0")
