@@ -89,7 +89,7 @@ class Rectangle(Base):
 
     def display(self):
         """ method display task 5 """
-        for f in range(self.width):
-            for c in range(self.height):
+        for f in range(self.height):
+            for c in range(self.width):
                 print("#", end="")
             print("")
