@@ -64,4 +64,3 @@ class Rectangle(Base):
     def y(self, y):
         """setter x"""
         self.__y = y
-
