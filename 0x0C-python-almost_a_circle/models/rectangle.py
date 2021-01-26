@@ -89,7 +89,12 @@ class Rectangle(Base):
 
     def display(self):
         """ method display task 5 """
-        for f in range(self.height):
-            for c in range(self.width):
+        # _ para eliminar advertencia de variable no usada
+        for _ in range(self.height):
+            for _ in range(self.width):
                 print("#", end="")
             print("")
+
+    def __str__(self):
+        return ("[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                self.id, self.__x, self.__y, self.__width, self.__height))
