@@ -115,3 +115,6 @@ class Rectangle(Base):
         for i in range(len(args)):
             # setattr(objeto, atributos, nuevo_valor)
             setattr(self, atributs[i], args[i])
+        # key toma el valor que le pasan y .items es el valor de la key
+        for key, value in kwargs.items():
+            setattr(self, key, value)
