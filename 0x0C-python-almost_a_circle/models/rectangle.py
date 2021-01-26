@@ -89,9 +89,18 @@ class Rectangle(Base):
 
     def display(self):
         """ method display task 5 """
+        if int(self.__y) == 0:
+            print("", end="")
+        elif int(self.__y) == 1:
+            print("")
+        else:
+            l = int(self.__y) - 1
+            print("{}".format("\n" * l))
         # _ para eliminar advertencia de variable no usada
-        for _ in range(self.height):
-            for _ in range(self.width):
+        for _ in range(self.__height):
+            for _ in range(self.__x):
+                print(" ", end="")
+            for _ in range(self.__width):
                 print("#", end="")
             print("")
 
