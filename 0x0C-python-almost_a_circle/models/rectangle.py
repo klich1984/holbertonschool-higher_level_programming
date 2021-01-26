@@ -123,4 +123,5 @@ class Rectangle(Base):
         else:
             # key toma el valor que le pasan y .items es el valor de la key
             for key, value in kwargs.items():
-                setattr(self, key, value)
+                if hasattr(self, key) is True:
+                    setattr(self, key, value)
