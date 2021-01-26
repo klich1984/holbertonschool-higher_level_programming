@@ -111,10 +111,16 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ method update """
+        if len(args) > 5:
+            l = 5
+        else:
+            l = len(args)
         atributs = ["id", "width", "height", "x", "y"]
-        for i in range(len(args)):
-            # setattr(objeto, atributos, nuevo_valor)
-            setattr(self, atributs[i], args[i])
-        # key toma el valor que le pasan y .items es el valor de la key
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+        if l > 0:
+            for i in range(l):
+                # setattr(objeto, atributos, nuevo_valor)
+                setattr(self, atributs[i], args[i])
+        else:
+            # key toma el valor que le pasan y .items es el valor de la key
+            for key, value in kwargs.items():
+                setattr(self, key, value)
