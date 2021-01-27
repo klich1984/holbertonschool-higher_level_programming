@@ -4,8 +4,6 @@ import pep8
 import unittest
 from models import base
 from models.base import Base
-from models.square import Square
-from models.rectangle import Rectangle
 
 
 class Test_Base(unittest.TestCase):
@@ -19,22 +17,22 @@ class Test_Base(unittest.TestCase):
 
     def test_docstrings(self):
         """ test docstrings """
-        self.assertIsNotNone(models.base.__doc__)
+        #self.assertIsNotNone(models.base.__doc__)
         self.assertIsNotNone(Base.__doc__)
         self.assertIsNotNone(Base.to_json_string.__doc__)
 
-    def test_main(self):
+    def test_id(self):
         """test main"""
         b1 = Base()
         self.assertEqual(b1.id, 1)
-        b2 = Base()
-        self.assertEqual(b2.id, 2)
-        b3 = Base()
-        self.assertEqual(b3.id, 3)
-        b4 = Base(12)
-        self.assertEqual(b4.id, 12)
-        b5 = Base()
-        self.assertEqual(b5.id, 4)
+        b1 = Base()
+        self.assertEqual(b1.id, 2)
+        b1 = Base()
+        self.assertEqual(b1.id, 3)
+        b1 = Base(12)
+        self.assertEqual(b1.id, 12)
+        b1 = Base()
+        self.assertEqual(b1.id, 4)
 
     def test_others_cases(self):
         """other cases"""
