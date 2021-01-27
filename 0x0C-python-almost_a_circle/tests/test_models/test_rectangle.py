@@ -2,6 +2,8 @@
 """ test rectangle.py """
 import unittest
 import pep8
+from io import StringIO
+from unittest.mock import patch
 from models.base import Base
 from models.rectangle import Rectangle
 
@@ -86,6 +88,20 @@ class Test_Rectangle(unittest.TestCase):
         r3 = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r3.area(), 56)
 
+    def test_task_5(self):
+        """ test task 5 main """
+        Base._Base__nb_objects = 0
+        r1 = Rectangle(4, 6)
+        out = "####\n####\n####\n####\n####\n####\n"
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            r1.display()
+            self.assertEqual(fake_out.getvalue(), out)
+        r1 = Rectangle(2, 2)
+        out = "##\n##\n"
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            r1.display()
+            self.assertEqual(fake_out.getvalue(), out)
+
     def test_task_6(self):
         """ test task 6 main """
         Base._Base__nb_objects = 0
@@ -93,6 +109,20 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(r1.__str__(), "[Rectangle] (12) 2/1 - 4/6")
         r2 = Rectangle(5, 5, 1)
         self.assertEqual(r2.__str__(), "[Rectangle] (1) 1/0 - 5/5")
+
+    def test_task_7(self):
+        """ test task 7 main """
+        Base._Base__nb_objects = 0
+        r1 = Rectangle(2, 3, 2, 2)
+        out = "\n\n  ##\n  ##\n  ##\n"
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            r1.display()
+            self.assertEqual(fake_out.getvalue(), out)
+        r2 = Rectangle(3, 2, 1, 0)
+        out = " ###\n ###\n"
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            r2.display()
+            self.assertEqual(fake_out.getvalue(), out)
 
     def test_task_8(self):
         """ test task 8 main """
@@ -148,6 +178,6 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(dictionary, {'x': 2, 'width': 10, 'id': 1,
                                       'height': 7, 'y': 8})
         self.assertEqual(type(dictionary), dict)
-        self.assertEqual(json_dictionary, '[{"x": 2, "y": 8, "id": 1,
-                                            "height": 7, "width": 10}]')
+        self.assertEqual(json_dictionary, '[{"x": 2, "y": 8, "id": 1,\
+ "height": 7, "width": 10}]')
         self.assertEqual(type(json_dictionary), str)
