@@ -2,6 +2,7 @@
 """ test square.py """
 import unittest
 import pep8
+import models.square
 from io import StringIO
 from unittest.mock import patch
 from models.base import Base
@@ -10,6 +11,21 @@ from models.square import Square
 
 class Test_Square(unittest.TestCase):
     """ class test_square task 10 """
+    def test_pep8_conformance(self):
+        """ Test that pep8 """
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['models/square.py'])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
+
+    def test_docstrings(self):
+        """ test docstrings """
+        self.assertIsNotNone(models.square.__doc__)
+        self.assertIsNotNone(Square.__doc__)
+        self.assertIsNotNone(Square.size.__doc__)
+        self.assertIsNotNone(Square.update.__doc__)
+        self.assertIsNotNone(Square.to_dictionary.__doc__)
+
     def test_task_10(self):
         Base._Base__nb_objects = 0
         s1 = Square(5)
