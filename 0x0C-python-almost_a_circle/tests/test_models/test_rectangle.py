@@ -6,8 +6,9 @@ import os
 from io import StringIO
 from unittest.mock import patch
 from models import rectangle
-from models.base import Base
+from models import base
 Rectangle = rectangle.Rectangle
+Base = base.Base
 
 
 class Test_Rectangle(unittest.TestCase):
