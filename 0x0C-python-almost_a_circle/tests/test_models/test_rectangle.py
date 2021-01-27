@@ -2,10 +2,12 @@
 """ test rectangle.py """
 import unittest
 import pep8
+import models.rectangle
 from io import StringIO
 from unittest.mock import patch
 from models.base import Base
 from models.rectangle import Rectangle
+import os
 
 
 class Test_Rectangle(unittest.TestCase):
@@ -16,6 +18,22 @@ class Test_Rectangle(unittest.TestCase):
         result = pep8style.check_files(['models/rectangle.py'])
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
+
+    def test_docstrings(self):
+        """Test for existence of docstrings"""
+        self.assertIsNotNone(models.rectangle.__doc__)
+        self.assertIsNotNone(Rectangle.__doc__)
+        self.assertIsNotNone(Rectangle.width.__doc__)
+        self.assertIsNotNone(Rectangle.height.__doc__)
+        self.assertIsNotNone(Rectangle.x.__doc__)
+        self.assertIsNotNone(Rectangle.y.__doc__)
+        self.assertIsNotNone(Rectangle.check_height_with.__doc__)
+        self.assertIsNotNone(Rectangle.check_x_y.__doc__)
+        self.assertIsNotNone(Rectangle.area.__doc__)
+        self.assertIsNotNone(Rectangle.display.__doc__)
+        self.assertIsNotNone(Rectangle.__str__.__doc__)
+        self.assertIsNotNone(Rectangle.update.__doc__)
+        self.assertIsNotNone(Rectangle.to_dictionary.__doc__)
 
     def test_main(self):
         """ test main task 2 """
