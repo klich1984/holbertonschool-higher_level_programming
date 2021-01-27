@@ -20,7 +20,7 @@ class Test_Rectangle(unittest.TestCase):
                          "Found code style errors (and warnings).")
 
     def test_docstrings(self):
-        """Test for existence of docstrings"""
+        """ test docstrings """
         self.assertIsNotNone(models.rectangle.__doc__)
         self.assertIsNotNone(Rectangle.__doc__)
         self.assertIsNotNone(Rectangle.width.__doc__)
