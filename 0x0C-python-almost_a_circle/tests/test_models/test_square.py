@@ -2,6 +2,8 @@
 """ test square.py """
 import unittest
 import pep8
+from io import StringIO
+from unittest.mock import patch
 from models.base import Base
 from models.square import Square
 
@@ -13,12 +15,24 @@ class Test_Square(unittest.TestCase):
         s1 = Square(5)
         self.assertEqual(s1.__str__(), "[Square] (1) 0/0 - 5")
         self.assertEqual(s1.area(), 25)
+        out = "#####\n#####\n#####\n#####\n#####\n"
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            s1.display()
+            self.assertEqual(fake_out.getvalue(), out)
         s2 = Square(2, 2)
         self.assertEqual(s2.__str__(), "[Square] (2) 2/0 - 2")
         self.assertEqual(s2.area(), 4)
+        out = "  ##\n  ##\n"
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            s2.display()
+            self.assertEqual(fake_out.getvalue(), out)
         s3 = Square(3, 1, 3)
         self.assertEqual(s3.__str__(), "[Square] (3) 1/3 - 3")
         self.assertEqual(s3.area(), 9)
+        out = "\n\n\n ###\n ###\n ###\n"
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            s3.display()
+            self.assertEqual(fake_out.getvalue(), out)
 
     def test_task_11(self):
         """ class test_square task 11 """
