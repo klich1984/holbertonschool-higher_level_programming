@@ -8,7 +8,7 @@ module.exports = class Square extends BeforeSquare {
       for (let idx = 0; idx < this.height; idx++) {
         console.log('C'.repeat(this.width));
       }
-    } else {
+    } else if (c === undefined) {
       this.print();
     }
   }
