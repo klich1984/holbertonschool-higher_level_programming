@@ -8,8 +8,6 @@ if (length <= 3) {
 } else {
   let newArr = myVar.slice(2, length);
   let unicos = Array.from(new Set(newArr))
-  console.log(unicos);
   unicos = unicos.sort();
   console.log(unicos[unicos.length - 2]);
 }
-
