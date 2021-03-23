@@ -12,3 +12,4 @@ if (length <= 3) {
   unicos = unicos.sort();
   console.log(unicos[unicos.length - 2]);
 }
+
