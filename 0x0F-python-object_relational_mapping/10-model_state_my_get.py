@@ -20,14 +20,9 @@ if __name__ == "__main__":
     # create a configured "Session" class
     session = sessionmaker(bind=engine)
     state = session().query(State).filter(State.name.like(argv[4])).all()
-    print(len(state))
     if len(state) == 0:
         print("Not found")
     else:
         for st in state:
-            print(st)
-
-    """for state in session().query(State).order_by(State.id)\
-            .filter(State.name.like("%a%")):
-        print("{}: {}".format(state.id, state.name))"""
+            print(st.id)
     session().close()
