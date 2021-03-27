@@ -25,7 +25,7 @@ if __name__ == "__main__":
     lista = []
     lista = [list(i) for i in query_rows]
     for i in range(len(lista)):
-        print(join(lista[i]), end="")
+        print(', '.join(lista[i]), end="")
         print(lista[i][0], end=" ", sep=', ')
     cur.close()
     db.close()
