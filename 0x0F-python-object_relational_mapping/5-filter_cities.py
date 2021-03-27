@@ -21,7 +21,21 @@ if __name__ == "__main__":
                 FROM cities JOIN states ON cities.state_id = states.id\
                     WHERE states.name = (%s)", [argv[4]])
     query_rows = cur.fetchall()
-    
+    print(query_rows)
+    if len(query_rows) == 0:
+        print()
+    else:
+        for i in range(len(query_rows)):
+            if i == len(query_rows) - 1:
+                print(', '.join(query_rows[i]))
+            else:
+                print(', '.join(query_rows[i]), end=", ")
+            #print(lt[i][0], end=" ", sep=', ')
+    cur.close()
+    db.close()
+
+
+"""
     lt1 = []
     for i in query_rows:
         lt1.append(i[0])
@@ -30,6 +44,4 @@ if __name__ == "__main__":
             print(lt1[i])
         else:
             print("{}, ".format(lt1[i]), end="")
-        #print(lista[i][0], end=" ", sep=', ')
-    cur.close()
-    db.close()
+"""
