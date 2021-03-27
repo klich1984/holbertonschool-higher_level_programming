@@ -26,10 +26,3 @@ if __name__ == "__main__":
         session.delete(state)
     session.commit()
     session.close()
-
-
-"""
-for state in session().query(State).order_by(State.id)\
-            .filter(State.name.like("%a%")):
-        print("{}: {}".format(state.id, state.name))
-"""
