@@ -29,18 +29,5 @@ if __name__ == "__main__":
                 print(''.join(query_rows[i]))
             else:
                 print(''.join(query_rows[i]), end=", ")
-            #print(lt[i][0], end=" ", sep=', ')
     cur.close()
     db.close()
-
-
-"""
-    lt1 = []
-    for i in query_rows:
-        lt1.append(i[0])
-    for i in range(len(lt1)):
-        if i + 1 == len(lt1):
-            print(lt1[i])
-        else:
-            print("{}, ".format(lt1[i]), end="")
-"""
