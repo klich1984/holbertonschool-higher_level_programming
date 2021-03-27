@@ -22,12 +22,10 @@ if __name__ == "__main__":
     state = session().query(State).filter(State.name.like(argv[4])).all()
     print(len(state))
     if len(state) == 0:
-        print("Soy cero")
-    if state:
-        for i in state:
-            print(i.id)
-    else:
         print("Not found")
+    else:
+        for st in state:
+            print(st)
 
     """for state in session().query(State).order_by(State.id)\
             .filter(State.name.like("%a%")):
