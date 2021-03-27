@@ -19,10 +19,15 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     # create a configured "Session" class
     session = sessionmaker(bind=engine)
-    state = session().query(State).filter(State.name.like(argv[4]))
-    print(state)
-    print(state[0])
-    print("{}".format(state[0].name))
+    state = session().query(State).filter(State.name.like(argv[4])).all()
+    print(len(state))
+    if len(state) == 0:
+        print("Soy cero")
+    if state:
+        for i in state:
+            print(i.id)
+    else:
+        print("Not found")
 
     """for state in session().query(State).order_by(State.id)\
             .filter(State.name.like("%a%")):
