@@ -4,11 +4,12 @@ file that contains the class definition of a City and an instance
 """
 
 from sqlalchemy import Integer, Column, String, ForeignKey
-from model_state import Base
+from sqlalchemy.ext.declarative import declarative_base
+
+from sqlalchemy.orm import relationship
+from relationship_state import Base, State
 
 
-# Relationship One to Many
-# this file is the child as it contains the foreign key
 class City(Base):
     """ class City """
     __tablename__ = 'cities'

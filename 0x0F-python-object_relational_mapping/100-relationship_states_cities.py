@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """
-creates the State “California” with the City “San Francisco” from the database hbtn_0e_100_usa
+creates the State “California” with the City“San Francisco”
+from the database hbtn_0e_100_usa
 """
 
 from sys import argv
 from relationship_state import Base, State
-from relationship_city import City
-from sqlalchemy import (create_engine)
+from relationship_city import Base, City
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import relationship
 
@@ -40,10 +41,9 @@ session = Session()
 # # city_new.state = state_new
 # session.commit()
 # session.close()
-state_new = State(name="California")
-u1 = State()
-a1 = City(name="San Francisco")
-u1.cities.append(a1)
-session.add(state_new, u1)
+new_s = State(name="California")
+new_c = City(name="San Francisco")
+new_s.cities.append(new_c)
+session.add(new_s, new_c)
 session.commit()
 session.close()
