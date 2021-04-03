@@ -11,7 +11,7 @@ from relationship_state import Base, State
 
 
 class City(Base):
-    """ class City """
+    """ class City of reprentation a city"""
     __tablename__ = 'cities'
     id = Column(Integer,
                 autoincrement=True,

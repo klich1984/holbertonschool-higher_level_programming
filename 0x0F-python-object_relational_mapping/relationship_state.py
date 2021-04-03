@@ -12,9 +12,8 @@ from sqlalchemy.orm import relationship
 Base = declarative_base()
 
 
-# This is the class Parent as it contains el argument relationship
 class State(Base):
-    """Class State"""
+    """Class State of reprentation a city"""
     __tablename__ = 'states'
     id = Column(Integer, unique=True,
                 nullable=False, primary_key=True)
