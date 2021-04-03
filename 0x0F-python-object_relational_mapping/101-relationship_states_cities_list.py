@@ -19,7 +19,8 @@ if __name__ == "__main__":
     session = Session(engine)
     query = session.query(State).order_by(State.id).all()
     for i in query:
-        print(f'{i.id}: {i.name}')
+        print('{}: {}'.format(i.id, i.name))
         for j in i.cities:
-            print(f'    {j.id}: {j.name}')
+            print('    {}: {}'.format(j.id, j.name))
+    session.commit()
     session.close()
