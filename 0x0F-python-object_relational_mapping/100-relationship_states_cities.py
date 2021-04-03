@@ -23,13 +23,13 @@ Session = sessionmaker(bind=engine)
 session = Session()
 # addong data Cyty = Father, State = Child
 # add State
-state_new = State(name="California")
-session.add(state_new)
-session.commit()
-# Add City
-city_new = City(name="San Francisco", state=state_new)
-session.add(city_new)
-session.commit()
+# state_new = State(name="California")
+# session.add(state_new)
+# session.commit()
+# # Add City
+# city_new = City(name="San Francisco", state=state_new)
+# session.add(city_new)
+# session.commit()
 
 # city_new.state_id.append_foreign_key(fk)
 
@@ -40,3 +40,10 @@ session.commit()
 # # city_new.state = state_new
 # session.commit()
 # session.close()
+state_new = State(name="California")
+u1 = State()
+a1 = City(name="San Francisco")
+u1.cities.append(a1)
+session.add(state_new, u1)
+session.commit()
+session.close()
