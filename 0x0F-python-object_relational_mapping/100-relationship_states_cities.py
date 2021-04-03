@@ -21,8 +21,22 @@ Base.metadata.create_all(engine)
 # create a configured "Session" class
 Session = sessionmaker(bind=engine)
 session = Session()
-State_new = State(name="California")
-City_new = City(name="San Francisco")
-session.add(City_new, State_new)
+# addong data Cyty = Father, State = Child
+# add State
+state_new = State(name="California")
+session.add(state_new)
 session.commit()
-session.close()
+# Add City
+city_new = City(name="San Francisco", state=state_new)
+session.add(city_new)
+session.commit()
+
+# city_new.state_id.append_foreign_key(fk)
+
+# session.add(state_new)
+
+
+# session.add(city_new)
+# # city_new.state = state_new
+# session.commit()
+# session.close()
