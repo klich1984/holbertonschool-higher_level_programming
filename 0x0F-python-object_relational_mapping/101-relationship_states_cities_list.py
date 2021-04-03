@@ -6,8 +6,8 @@ contained in the database hbtn_0e_101_usa
 
 from sys import argv
 from sqlalchemy import create_engine
-from relationship_state import State
-from relationship_city import Base, City
+from relationship_state import Base, State
+from relationship_city import City
 from sqlalchemy.orm import relationship, sessionmaker
 
 if __name__ == "__main__":
