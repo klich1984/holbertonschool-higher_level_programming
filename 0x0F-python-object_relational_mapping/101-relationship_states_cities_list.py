@@ -22,5 +22,4 @@ if __name__ == "__main__":
         print('{}: {}'.format(i.id, i.name))
         for j in i.cities:
             print('    {}: {}'.format(j.id, j.name))
-    session.commit()
     session.close()
