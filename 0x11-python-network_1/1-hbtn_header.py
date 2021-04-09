@@ -12,13 +12,4 @@ if __name__ == '__main__':
     print(url)
     req = urllib.request.Request(url)
     with urllib.request.urlopen(req) as response:
-        html = response.read()
-
-r = response.info()
-print(r)
-print(dir(r))
-print("***"*20)
-print(dir(response))
-print(r.__gt__)
-print("***"*20)
-print(response.getheader('X-Request-Id'))
+        print(response.getheader('X-Request-Id'))
