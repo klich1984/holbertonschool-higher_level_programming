@@ -9,7 +9,6 @@ from sys import argv
 if __name__ == '__main__':
 
     url = argv[1]
-    print(url)
     req = urllib.request.Request(url)
     with urllib.request.urlopen(req) as response:
         print(response.getheader('X-Request-Id'))
