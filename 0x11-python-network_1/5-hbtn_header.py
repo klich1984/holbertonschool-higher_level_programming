@@ -14,4 +14,5 @@ if __name__ == '__main__':
 
     r = requests.get(argv[1])
     # print(dir(r))
-    print(r.headers['X-Request-Id'])
+    # print(r.headers)
+    print(r.headers.get('X-Request-Id'))
