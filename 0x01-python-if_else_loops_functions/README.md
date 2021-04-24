@@ -1,35 +1,27 @@
-# 0x01. Python - if/else, loops, functions
+# 0x03. Python - Data Structures: Lists, Tuples
 
 ## Resources :eyes:
 Read or watch:
-* [More Control Flow Tools](https://intranet.hbtn.io/rltoken/R7uTXYVOjUilq6rCjsQcFg)
-* [Myths about Indentation](https://intranet.hbtn.io/rltoken/Y-HaMMJBKPseiVDo_v9PVg)
-* [IndentationError](https://intranet.hbtn.io/rltoken/AorC2VSZ4yCOx-AbatvKLA)
-* [How To Use String Formatters in Python 3](https://intranet.hbtn.io/rltoken/arGQeiwUbFn3JOoYpw84yA)
-* [Learn to Program](https://intranet.hbtn.io/rltoken/mlo-dauC8pSM_NrO5VYobw)
-* [Learn to Program 2 : Looping](https://intranet.hbtn.io/rltoken/mlo-dauC8pSM_NrO5VYobw)
-* [PEP 8 – Style Guide for Python Code](https://intranet.hbtn.io/rltoken/mq1IFaMhqpk2IHE0dC6UuQ)
+* [3.1.3. Lists](https://intranet.hbtn.io/rltoken/zIxzk5ChUX6KzhJIxJjf9Q)
+* [Data structures](https://intranet.hbtn.io/rltoken/ugotLwGPHgU1raKqco8TFg)
+* [Learn to Program 6 : Lists](https://intranet.hbtn.io/rltoken/smot10KJXMP-a84UxJ7WrQ)
 
 ---
 ## Learning Objectives :technologist:
 What you should learn from this project:
 
 * Why Python programming is awesome
-* Why indentation is so important in Python
-* How to use the if, if ... else statements
-* How to use comments
-* How to affect values to variables
-* How to use the while and for loops
-* How is Python’s for different from C‘s?
-* How to use the break and continues statements
-* How to use else clauses on loops
-* What does the pass statement do, and when to use it
-* How to use range
-* What is a function and how do you use functions
-* What does return a function that does not use any return statement
-* Scope of variables
-* What’s a traceback
-* What are the arithmetic operators and how to use them
+* What are lists and how to use them
+* What are the differences and similarities between strings and lists
+* What are the most common methods of lists and how to use them
+* How to use lists as stacks and queues
+* What are list comprehensions and how to use them
+* What are tuples and how to use them
+* When to use tuples versus lists
+* What is a sequence
+* What is tuple packing
+* What is sequence unpacking
+* What is the del statement and how to use it
 
 ---
 ---
