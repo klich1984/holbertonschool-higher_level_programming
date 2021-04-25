@@ -84,5 +84,5 @@ What you should learn from this project:
 
 ---
 
-## Author :writing_hand: :alien:
-* **Carlos Usuga Martinez** - [klich1984](https://github.com/klich1984)
+## Author :writing_hand:
+* **Carlos Usuga Martinez** - [klich1984](https://github.com/klich1984) :alien:
