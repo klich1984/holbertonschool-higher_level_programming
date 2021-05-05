@@ -12,14 +12,12 @@ request(myArgs[2], function (error, response, body) {
   const req = info.results;
   for (const i of req) {
     // console.log(i)
-    if (i.characters.includes('https://swapi-api.hbtn.io/api/people/18/')) {
-      count++;
+    for (const j of i.characters) {
+      // console.log(j);
+      if (j.includes('18')) {
+        count++;
+      }
     }
   }
-  // for (let i = 0; i < info.results.length; i++) {
-  //   if (info.results[i].characters.includes('https://swapi-api.hbtn.io/api/people/18/')) {
-  //     count++;
-  //   }
-  // }
   console.log(count);
 });
