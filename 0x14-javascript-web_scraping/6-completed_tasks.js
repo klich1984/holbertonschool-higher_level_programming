@@ -8,15 +8,15 @@ request(myArgs[2], function (error, response, body) {
   }
   const info = JSON.parse(body);
   const dict = {};
-  for (const i of info){
+  for (const i of info) {
     if (!(i.userId in dict) && i.completed === true) {
       dict[i.userId] = 0;
     }
-    if (i.completed === true){
+    if (i.completed === true) {
       dict[i.userId] += 1;
     }
     // if (i.completed == true){
     //   count ++;
   }
-  console.log(dict)
+  console.log(dict);
 });
